@@ -895,33 +895,7 @@ new Vue({
 					
 					],	
 					
-					elements:[{
-						
-							"id":1,
-							
-							"type":"header",
-							
-							"class":"header",
-							
-							"element_id":"",
-							
-							"area":["","",""],
-							
-							"grid_column_start":["","",""],
-							
-							"grid_column_end":["","",""],
-							
-							"grid_row_start":["","",""],
-							
-							"grid_row_end":["","",""],
-							
-							"justify_self":["","",""],
-							
-							"align_self":["","",""]
-							
-						}
-						
-					],
+					elements:[],
 					
 				});
 				
