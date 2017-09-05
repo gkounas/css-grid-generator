@@ -418,7 +418,7 @@ Vue.component('app-areacontroller', {
 				  
 				  this.grid.columns[GetViewIndex(this.view)].forEach(function(col) {
 					  
-						strColumns = strColumns + col.width + " ["+ col.name +"] ";
+						strColumns = strColumns  + " 1fr ["+ col.name +"] ";
 						
 					});
 			  
@@ -436,7 +436,7 @@ Vue.component('app-areacontroller', {
 			  
 			  this.grid.rows[GetViewIndex(this.view)].forEach(function(row) {
 				  
-					strRows = strRows + row.height + " ["+ row.name +"] ";
+					strRows = strRows + " auto ["+ row.name +"] ";
 					
 				});
 		  
