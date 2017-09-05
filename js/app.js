@@ -520,9 +520,29 @@ Vue.component('app-elementcontroller', {
 					
 				this.grid.template_areas[GetViewIndex(this.view)].forEach(function(area,i){
 					
-					if(area.custom!=""){
+					if(area.custom!="" ){
 						
-						areaList.push({"text":area.custom,"value":area.custom});
+						var newRow = {"text":area.custom,"value":area.custom};
+						
+						var found = false;
+						
+						for(var i = 0; i < areaList.length; i++) {
+							
+							if(areaList[i].value == newRow.value) {
+
+								found = true;
+							
+								break;
+							}
+						
+						}
+						
+						if(!found){
+							
+							areaList.push(newRow);
+							
+						}
+						
 						
 					}
 					
