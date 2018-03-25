@@ -1,4 +1,4 @@
-﻿var data = {
+var data = {
 	
 	grids:[],
 	
@@ -74,8 +74,117 @@
 		  
 		  { text: 'footer', value: 'footer'},
 		  
-		  { text: 'div', value: 'div'}
+		  { text: 'div', value: 'div'},
 		  
+		  { text: 'grid', value: 'grid'}
+		  
+    ],	
+	
+	
+	elementIterations: [
+	
+          { text: '1', value: ''},
+		  
+		  { text: '2', value: '2'},
+		  
+		  { text: '3', value: '3'},
+		  
+		  { text: '4', value: '4'},
+		  
+		  { text: '5', value: '5'},
+		  
+		  { text: '6', value: '6'},
+		  
+		  { text: '7', value: '7'},
+		  
+		  { text: '8', value: '8'},
+		  
+		  { text: '9', value: '9'},
+		  
+		  { text: '10', value: '10'},
+		  
+		  { text: 'infinite', value: 'infinite'},
+		  
+    ],	
+	
+	animationTypes: [
+			{ text: 'No Animation', value: ''},
+			{ text: 'bounce', value: 'bounce'},
+			{ text: 'flash', value: 'flash'},
+			{ text: 'pulse', value: 'pulse'},
+			{ text: 'rubberBand', value: 'rubberBand'},
+			{ text: 'shake', value: 'shake'},
+			{ text: 'headShake', value: 'headShake'},
+			{ text: 'swing', value: 'swing'},
+			{ text: 'tada', value: 'tada'},
+			{ text: 'wobble', value: 'wobble'},
+			{ text: 'jello', value: 'jello'},
+			{ text: 'bounceIn', value: 'bounceIn'},
+			{ text: 'bounceInDown', value: 'bounceInDown'},
+			{ text: 'bounceInLeft', value: 'bounceInLeft'},
+			{ text: 'bounceInRight', value: 'bounceInRight'},
+			{ text: 'bounceInUp', value: 'bounceInUp'},
+			{ text: 'bounceOut', value: 'bounceOut'},
+			{ text: 'bounceOutDown', value: 'bounceOutDown'},
+			{ text: 'bounceOutLeft', value: 'bounceOutLeft'},
+			{ text: 'bounceOutRight', value: 'bounceOutRight'},
+			{ text: 'bounceOutUp', value: 'bounceOutUp'},
+			{ text: 'fadeIn', value: 'fadeIn'},
+			{ text: 'fadeInDown', value: 'fadeInDown'},
+			{ text: 'fadeInDownBig', value: 'fadeInDownBig'},
+			{ text: 'fadeInLeft', value: 'fadeInLeft'},
+			{ text: 'fadeInLeftBig', value: 'fadeInLeftBig'},
+			{ text: 'fadeInRight', value: 'fadeInRight'},
+			{ text: 'fadeInRightBig', value: 'fadeInRightBig'},
+			{ text: 'fadeInUp', value: 'fadeInUp'},
+			{ text: 'fadeInUpBig', value: 'fadeInUpBig'},
+			{ text: 'fadeOut', value: 'fadeOut'},
+			{ text: 'fadeOutDown', value: 'fadeOutDown'},
+			{ text: 'fadeOutDownBig', value: 'fadeOutDownBig'},
+			{ text: 'fadeOutLeft', value: 'fadeOutLeft'},
+			{ text: 'fadeOutLeftBig', value: 'fadeOutLeftBig'},
+			{ text: 'fadeOutRight', value: 'fadeOutRight'},
+			{ text: 'fadeOutRightBig', value: 'fadeOutRightBig'},
+			{ text: 'fadeOutUp', value: 'fadeOutUp'},
+			{ text: 'fadeOutUpBig', value: 'fadeOutUpBig'},
+			{ text: 'flipInX', value: 'flipInX'},
+			{ text: 'flipInY', value: 'flipInY'},
+			{ text: 'flipOutX', value: 'flipOutX'},
+			{ text: 'flipOutY', value: 'flipOutY'},
+			{ text: 'lightSpeedIn', value: 'lightSpeedIn'},
+			{ text: 'lightSpeedOut', value: 'lightSpeedOut'},
+			{ text: 'rotateIn', value: 'rotateIn'},
+			{ text: 'rotateInDownLeft', value: 'rotateInDownLeft'},
+			{ text: 'rotateInDownRight', value: 'rotateInDownRight'},
+			{ text: 'rotateInUpLeft', value: 'rotateInUpLeft'},
+			{ text: 'rotateInUpRight', value: 'rotateInUpRight'},
+			{ text: 'rotateOut', value: 'rotateOut'},
+			{ text: 'rotateOutDownLeft', value: 'rotateOutDownLeft'},
+			{ text: 'rotateOutDownRight', value: 'rotateOutDownRight'},
+			{ text: 'rotateOutUpLeft', value: 'rotateOutUpLeft'},
+			{ text: 'rotateOutUpRight', value: 'rotateOutUpRight'},
+			{ text: 'hinge', value: 'hinge'},
+			{ text: 'jackInTheBox', value: 'jackInTheBox'},
+			{ text: 'rollIn', value: 'rollIn'},
+			{ text: 'rollOut', value: 'rollOut'},
+			{ text: 'zoomIn', value: 'zoomIn'},
+			{ text: 'zoomInDown', value: 'zoomInDown'},
+			{ text: 'zoomInLeft', value: 'zoomInLeft'},
+			{ text: 'zoomInRight', value: 'zoomInRight'},
+			{ text: 'zoomInUp', value: 'zoomInUp'},
+			{ text: 'zoomOut', value: 'zoomOut'},
+			{ text: 'zoomOutDown', value: 'zoomOutDown'},
+			{ text: 'zoomOutLeft', value: 'zoomOutLeft'},
+			{ text: 'zoomOutRight', value: 'zoomOutRight'},
+			{ text: 'zoomOutUp', value: 'zoomOutUp'},
+			{ text: 'slideInDown', value: 'slideInDown'},
+			{ text: 'slideInLeft', value: 'slideInLeft'},
+			{ text: 'slideInRight', value: 'slideInRight'},
+			{ text: 'slideInUp', value: 'slideInUp'},
+			{ text: 'slideOutDown', value: 'slideOutDown'},
+			{ text: 'slideOutLeft', value: 'slideOutLeft'},
+			{ text: 'slideOutRight', value: 'slideOutRight'},
+			{ text: 'slideOutUp', value: 'slideOutUp'}
     ],	
 		
 	dialogBreakpoints:false,
@@ -86,13 +195,15 @@
 	
 	toastCopy:false,
 	
-	html_top:'<!DOCTYPE html>\r\n\r\n<html>\r\n\r\n\t<head>\r\n\r\n\t\t<meta charset="utf-8"/>\r\n\r\n\t\t<meta http-equiv="X-UA-Compatible" content="IE=edge">\r\n\r\n\t\t<meta name="viewport" content="width=device-width, initial-scale=1"/>\r\n\r\n\t\t<title>Created By CSS Grid Generator</title>\r\n\r\n\t</head>\r\n\r\n\t<body>',
+	html_top:'<!DOCTYPE html>\r\n\r\n<html>\r\n\r\n\t<head>\r\n\r\n\t\t<meta charset="utf-8"/>\r\n\r\n\t\t<meta http-equiv="X-UA-Compatible" content="IE=edge">\r\n\r\n\t\t<meta name="viewport" content="width=device-width, initial-scale=1"/>\r\n\r\n\t\t<title>Created By CSS Grid Generator</title>\r\n\r\n\t\t<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">\r\n\r\n\t</head>\r\n\r\n\t<body>',
 	
 	html_bottom:'\t</body>\r\n\r\n</html>\r\n\r\n',
 	
 	css_top:'@supports (grid-area: auto) {',
 	
 	css_bottom:'}\r\n\r\n',
+	
+	playAnimation:false,
 	
 };
 
@@ -135,7 +246,7 @@ Vue.component('app-gridcontroller', {
 	
 	template: '#app-gridcontroller',
 	
-	props:['grids','grid','view','gridTypes','alignTypes','justifyTypes','elementTypes','areaTypes'],
+	props:['grids','grid','view','gridTypes','alignTypes','justifyTypes','elementTypes','areaTypes','animationTypes','elementIterations'],
 	
 	data: function () {
 		
@@ -217,6 +328,8 @@ Vue.component('app-gridcontroller', {
 						
 						"type":"div",
 						
+						"grid_child_id":"",
+						
 						"class":"",
 						
 						"element_id":"",
@@ -233,7 +346,15 @@ Vue.component('app-gridcontroller', {
 						
 						"justify_self":["","",""],
 						
-						"align_self":["","",""]
+						"align_self":["","",""],
+						
+						"animation":"",
+						
+						"animation_duration":"",
+						
+						"animation_delay":"",
+						
+						"animation_iteration":""
 						
 					});
 									
@@ -468,7 +589,7 @@ Vue.component('app-elementcontroller', {
 	
 	template: '#app-elementcontroller',
 	
-	props:['element','grid','elementTypes','alignTypes','justifyTypes','areaTypes','view'],
+	props:['element','grid','elementTypes','alignTypes','justifyTypes','areaTypes','view','animationTypes','elementIterations'],
 	
 	data: function () {
 		
@@ -485,6 +606,20 @@ Vue.component('app-elementcontroller', {
 			if (conf == true) {
 				
 				this.collapsed = false;
+				
+				if(element.type=="grid" && element.grid_child_id!=""){
+					
+					for (i=0;i<data.grids.length;i++){
+					
+						if(data.grids[i].id == element.grid_child_id){
+							
+							data.grids[i].parent_id = "";
+							
+						}
+						
+					}
+					
+				}
 
 				var index = this.grid.elements.indexOf(element);
 
@@ -497,6 +632,42 @@ Vue.component('app-elementcontroller', {
 					});
 
 			}
+			
+		},
+		
+		updateThis(element){
+			
+			if(element.type=="grid" && element.grid_child_id!=""){
+				
+				for (i=0;i<data.grids.length;i++){
+				
+					if(data.grids[i].id == element.grid_child_id){
+						
+						data.grids[i].parent_id = this.grid.id;
+						
+					}
+					
+				}
+				
+			}
+			
+			if(element.type!="grid" && element.grid_child_id!=""){
+				
+				for (i=0;i<data.grids.length;i++){
+				
+					if(data.grids[i].id == element.grid_child_id){
+						
+						data.grids[i].parent_id = "";
+						
+					}
+					
+				}
+				
+				element.grid_child_id="";
+				
+			}
+			
+			this.collapsed = false;
 			
 		},
 		
@@ -577,7 +748,26 @@ Vue.component('app-elementcontroller', {
 			}
 			
 			return listRows;
+		},
+		
+		getGrids:function(){
+			
+			var listGrids= [];
+			
+			for (i=0;i<data.grids.length;i++){
+				
+				if(data.grids[i].id != this.grid.id && data.grids[i].parent_id==""){
+					
+					listGrids.push({"text":"Grid "+data.grids[i].id,"value":data.grids[i].id});
+					
+				}
+				
+			}
+			
+			return listGrids;
+			
 		}
+
 		
 	}	
 	
@@ -775,7 +965,7 @@ Vue.component('app-grid', {
 	
 });
 
-new Vue({
+var vm = new Vue({
 	
 	el: '#app',
 	
@@ -792,6 +982,8 @@ new Vue({
 				data.grids.push({
 					
 					"id":data.grids.length+1,
+					
+					"parent_id":"",
 					
 					"display":["grid","grid","grid"],
 					
@@ -927,6 +1119,37 @@ new Vue({
 				
         },
 		
+		playAnimations(){
+			
+			var found = false;
+			
+			if(data.grids.length>0){
+				
+				data.grids.forEach(function(grid,i){
+					
+					if(grid.elements.length>0){
+						
+						found = true;
+					}
+
+				});
+
+			}
+			
+			if(found){
+
+				data.playAnimation = true;
+					
+			}
+
+		},
+		
+		stopAnimations(){
+			
+				data.playAnimation = false;
+
+		},
+		
 		copyToClipboard(element_id){
 			
 			  if (document.selection) { 
@@ -968,6 +1191,46 @@ new Vue({
 			
 		},
 		
+		generateHTMLGrid(grid_count,grid,depth){
+			
+					var grid_code = "";
+					
+					var tabs= "";
+					
+					for(g=0; g<depth; g++){
+						
+						tabs = tabs + '\t';
+					}
+					
+					grid_code = grid_code + '\r\n\r\n\t\t'+tabs+'<div class="grid'+((grid_count>1)?grid.id:'')+'">\r\n\r\n';
+					
+					grid.elements.forEach(function(el,i){
+					
+						if(el.type!=='grid'){
+							
+							grid_code = grid_code + tabs + tabs + '\t\t\t<'+el.type+' class="'+el.class+((el.class=="")?el.type+el.id:'') + ((el.animation!='')?' animated '+el.animation:'')+'" '+((el.element_id!='')?'id="'+el.element_id+'" ':'')+'></'+el.type+'>\r\n\r\n';
+							
+						}else{
+							
+							vm.grids.forEach(function(child_grid,k){
+								
+								 if(el.type=='grid' && child_grid.parent_id==grid.id && child_grid.id==el.grid_child_id){
+									 
+									 grid_code = grid_code +vm.generateHTMLGrid(grid_count,child_grid,depth+1);
+									 
+								 }
+							 
+							});
+							
+						}
+					
+					});
+					
+					grid_code = grid_code + tabs + '\t\t</div>\r\n\r\n';
+					
+					return grid_code;
+		},
+		
 		generateHTML(){
 			
 			var html_code = this.html_top;
@@ -976,15 +1239,11 @@ new Vue({
 			
 			this.grids.forEach(function(grid,i){
 				
-				html_code = html_code + '\r\n\r\n\t\t<div class="grid'+((grid_count>1)?grid.id:'')+'">\r\n\r\n';
-				
-				grid.elements.forEach(function(el,i){
-				
-					html_code = html_code + '\t\t\t<'+el.type+' class="'+el.class+((el.class=="")?el.type+el.id:'')+'" '+((el.element_id!='')?'id="'+el.element_id+'" ':'')+'></'+el.type+'>\r\n\r\n';
-				
-				});
-				
-				html_code = html_code + '\t\t</div>\r\n\r\n';
+				if(grid.parent_id==""){
+					
+					html_code = html_code + vm.generateHTMLGrid(grid_count,grid,0);
+
+				}
 				
 			});
 			
@@ -993,6 +1252,7 @@ new Vue({
 			return html_code;
 			
 		},
+		
 		
 		generateCSS(){
 			
@@ -1134,7 +1394,45 @@ new Vue({
 						if(el.grid_row_end[GetViewIndex(view)]!="")
 							css_code = css_code + '\t\t\tgrid-row-end:'+el.grid_row_end[GetViewIndex(view)]+';\r\n\r\n';
 						
+						if(el.animation_duration!=""){
+							
+							css_code = css_code +"\t\t\t-webkit-animation-duration:"+el.animation_duration+";\r\n\r\n";
+							
+							css_code = css_code +"\t\t\t-moz-animation-duration:"+el.animation_duration+";\r\n\r\n";
+							
+							css_code = css_code +"\t\t\t-ms-animation-duration:"+el.animation_duration+";\r\n\r\n";
+							
+							css_code = css_code +"\t\t\t-o-animation-duration:"+el.animation_duration+";\r\n\r\n";
+							
+							css_code = css_code +"\t\t\tanimation-duration:"+el.animation_duration+";\r\n\r\n";
+						}
 						
+						if(el.animation_delay!=""){
+							
+							css_code = css_code +"\t\t\t-webkit-animation-delay:"+el.animation_delay+";\r\n\r\n";
+							
+							css_code = css_code +"\t\t\t-moz-animation-delay:"+el.animation_delay+";\r\n\r\n";
+							
+							css_code = css_code +"\t\t\t-ms-animation-delay:"+el.animation_delay+";\r\n\r\n";
+							
+							css_code = css_code +"\t\t\t-o-animation-delay:"+el.animation_delay+";\r\n\r\n";
+							
+							css_code = css_code +"\t\t\tanimation-delay:"+el.animation_delay+";\r\n\r\n";
+						}
+						
+						if(el.animation_iteration!=""){
+							
+							css_code = css_code +"\t\t\t-webkit-animation-iteration-count:"+el.animation_iteration+";\r\n\r\n";
+							
+							css_code = css_code +"\t\t\t-moz-animation-iteration-count:"+el.animation_iteration+";\r\n\r\n";
+							
+							css_code = css_code +"\t\t\t-ms-animation-iteration-count:"+el.animation_iteration+";\r\n\r\n";
+							
+							css_code = css_code +"\t\t\t-o-animation-iteration-count:"+el.animation_iteration+";\r\n\r\n";
+							
+							css_code = css_code +"\t\t\tanimation-iteration-count:"+el.animation_iteration+";\r\n\r\n";
+						}
+			
 						css_code = css_code + '\t\t}\r\n\r\n';
 					
 					}.bind(this));
