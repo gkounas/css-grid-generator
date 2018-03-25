@@ -21,3 +21,10 @@ Created using [Vuejs](https://vuejs.org/) and [vuetifyjs](https://vuetifyjs.com/
 7. (Optional) You can edit the screen break points by clicking the "EDIT BREAKPOINTS" button of the toolbar.
 
 8. Export the generated html and css using the "VIEW HTML/CSS" button of the toolbar.
+
+
+###Update
+
+1. Elements can now be animated using [Animate.css](https://github.com/daneden/animate.css) - Use the buttons Play and Stop animation at the top bar for preview.
+
+2. Grids can be nested by selecting type "grid" in element type
