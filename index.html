@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 	<head>
@@ -19,6 +19,8 @@
 		
 		<link rel="stylesheet" href="css/style.css">
 		
+		<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+		
 	 </head>
 	  
 	 <body>
@@ -38,6 +40,10 @@
 				<v-toolbar-items >
 				
 				  <v-btn flat @click="newGrid"><v-icon fa left dark>plus</v-icon> Add new Grid</v-btn>
+				  
+				  <v-btn flat @click="playAnimations"><v-icon fa left dark>play</v-icon> Play animations</v-btn>
+				  
+				  <v-btn flat @click="stopAnimations"><v-icon fa left dark>stop</v-icon> Stop animations</v-btn>
 				  
 				  <v-dialog v-model="dialogBreakpoints" persistent width="90%">
 				  
@@ -175,7 +181,7 @@
 			
 			<v-footer class="grey darken-3 white--text app_footer">
 			
-					<div>Built with  <v-icon class="red--text text--darken-2 ">favorite</v-icon> using <a target="_blank" href="https://vuejs.org">Vue.js</a> &  <a target="_blank" href="https://vuetifyjs.com">Vuetify</a> | For more information regarding CSS Grid <a target="_blank" href="https://gridbyexample.com">gridbyexample</a> & <a target="_blank" href="https://css-tricks.com/snippets/css/complete-guide-grid/">css-tricks.com</a> | view source on <a target="_blank" href="https://github.com/gkounas/css-grid-generator/">Github</a></div>
+					<div>Built with  <v-icon class="red--text text--darken-2 ">favorite</v-icon> using <a target="_blank" href="https://vuejs.org">Vue.js</a> ,  <a target="_blank" href="https://vuetifyjs.com">Vuetify</a> & <a target="_blank" href="https://github.com/daneden/animate.css">Animate.css by Daniel Eden</a> | For more information regarding CSS Grid <a target="_blank" href="https://gridbyexample.com">gridbyexample</a> & <a target="_blank" href="https://css-tricks.com/snippets/css/complete-guide-grid/">css-tricks.com</a> | view source on <a target="_blank" href="https://github.com/gkounas/css-grid-generator/">Github</a></div>
 					
 			</v-footer>
 			 
@@ -205,7 +211,7 @@
 				
 					<div v-for="grid in grids">
 					
-							<app-gridcontroller v-bind:grids="grids" v-bind:grid="grid" v-bind:view="view" v-bind:areaTypes="areaTypes" v-bind:gridTypes="gridTypes" v-bind:alignTypes="alignTypes" v-bind:justifyTypes="justifyTypes" v-bind:elementTypes="elementTypes"></app-gridcontroller>
+							<app-gridcontroller v-bind:grids="grids" v-bind:grid="grid" v-bind:view="view" v-bind:areaTypes="areaTypes" v-bind:gridTypes="gridTypes" v-bind:alignTypes="alignTypes" v-bind:justifyTypes="justifyTypes" v-bind:elementTypes="elementTypes" v-bind:animationTypes="animationTypes" v-bind:elementIterations="elementIterations"></app-gridcontroller>
 							
 					</div>
 					
@@ -217,7 +223,7 @@
 		
 			<div id="preview" v-bind:style="{ 'max-width': getMediaWidth}"  >
 			
-				<div v-for="grid in grids">
+				<div v-for="grid in grids"  v-if="grid.parent_id==''">
 					
 					<app-grid v-bind:grid="grid"  v-bind:view="view"></app-grid>
 							
@@ -360,7 +366,7 @@
 					
 					<div v-for="element in grid.elements">
 						
-							<app-elementcontroller v-bind:element="element"  v-bind:view="view"  v-bind:grid="grid" v-bind:elementTypes="elementTypes" v-bind:alignTypes="alignTypes" v-bind:justifyTypes="justifyTypes" v-bind:areaTypes="areaTypes"></app-elementcontroller>
+							<app-elementcontroller v-bind:element="element"  v-bind:view="view"  v-bind:grid="grid" v-bind:elementTypes="elementTypes" v-bind:animationTypes="animationTypes" v-bind:alignTypes="alignTypes" v-bind:justifyTypes="justifyTypes" v-bind:areaTypes="areaTypes"  v-bind:elementIterations="elementIterations"></app-elementcontroller>
 								
 					</div>
 					
@@ -530,6 +536,14 @@
 					<v-subheader>Type</v-subheader>
 				
 					<v-select v-bind:items="elementTypes" label="Type" single-line v-model="element.type" item-text="text" item-value="value"></v-select>
+					
+					<v-container  v-if="element.type=='grid'">
+					
+					<v-subheader>Child Grid</v-subheader>
+					
+					<v-select v-bind:items="getGrids" label="Child Grid" single-line v-model="element.grid_child_id" item-text="text" item-value="value"></v-select>
+					
+					</v-container>
 				
 					<v-text-field label="Class" v-model="element.class"></v-text-field>
 					
@@ -631,11 +645,23 @@
 						
 						</v-container>
 						
+						<v-subheader>Animation</v-subheader>
+						
+						<v-select v-bind:items="animationTypes" label="Animation Type" single-line v-model="element.animation" item-text="text" item-value="value" autocomplete></v-select>
+						
+						<v-text-field hint="in Seconds (ex. 2s) or in Milliseconds (ex. 500ms)" persistent-hint label="Animation Duration" v-model="element.animation_duration"></v-text-field>
+						
+						<v-text-field hint="in Seconds (ex. 2s) or in Milliseconds (ex. 500ms)" persistent-hint label="Animation Delay" v-model="element.animation_delay"></v-text-field>
+						
+						<v-subheader>Animation Iteration</v-subheader>
+						
+						<v-select v-bind:items="elementIterations" label="Animation Iteration" single-line v-model="element.animation_iteration" item-text="text" item-value="value"></v-select>
+						
 				</v-card-text>
 				
 				<v-card-actions>
 				
-				  <v-btn success dark  @click.native="collapsed = false"><v-icon fa left dark>check</v-icon> Ok</v-btn>
+				  <v-btn success dark  @click="updateThis(element)"><v-icon fa left dark>check</v-icon> Ok</v-btn>
 				  
 				  <v-btn error dark  @click="deleteThis(element)"><v-icon fa left dark>trash</v-icon> Delete Element</v-btn>	
 				  
@@ -652,13 +678,19 @@
 			
 			<div class="grid" v-bind:style="{ 'grid-template-columns': gridColumns, 'grid-template-rows': gridRows,'grid-row-gap':gridGapVert,'grid-column-gap':gridGapHor,'display':gridDisplay,'align-items':gridAlign,'justify-items':gridJustify,'grid-template-areas':gridTemplateAreas}">
 					
-					<div v-for="el in grid.elements" v-bind:class="el.type" v-bind:style="{ 'grid-area': itemArea(el),'grid-column-start':itemColumnStart(el),'grid-column-end':itemColumnEnd(el),'grid-row-start':itemRowStart(el),'grid-row-end':itemRowEnd(el),'justify-self':itemJustify(el),'align-self':itemAlign(el)}">{{el.type}}</div>
+					<div v-for="el in grid.elements" v-bind:class="(el.animation !='' && playAnimation)? el.type+ ' animated ' + el.animation : el.type" v-bind:style="{'grid-area': itemArea(el),'grid-column-start':itemColumnStart(el),'grid-column-end':itemColumnEnd(el),'grid-row-start':itemRowStart(el),'grid-row-end':itemRowEnd(el),'justify-self':itemJustify(el),'align-self':itemAlign(el),'animation-duration':el.animation_duration,'animation-delay':el.animation_delay,'animation-iteration-count':el.animation_iteration}"><span v-if="el.type!=='grid'">{{el.type}}</span>
+					<div v-for="child_grid in grids"  v-if="el.type=='grid' && child_grid.parent_id==grid.id && child_grid.id==el.grid_child_id">
+					
+						<app-grid v-bind:grid="child_grid"  v-bind:view="view"></app-grid>
+								
+					</div>
+					</div>
 
 			</div>
 			
 			<div class="grid_overlay" v-bind:style="{ 'grid-template-columns': gridColumns, 'grid-template-rows': gridRows,'grid-row-gap':gridGapVert,'grid-column-gap':gridGapHor,'display':gridDisplay}">
 
-				<div v-for="n in getPlaceholders" class="placeholder">{{gridAreaName(n)}}</div>
+				<div v-for="n in getPlaceholders"  class="placeholder">{{gridAreaName(n)}}</div>
 			
 			</div>
 			
