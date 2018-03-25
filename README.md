@@ -23,7 +23,7 @@ Created using [Vuejs](https://vuejs.org/) and [vuetifyjs](https://vuetifyjs.com/
 8. Export the generated html and css using the "VIEW HTML/CSS" button of the toolbar.
 
 
-###Update
+### Update
 
 1. Elements can now be animated using [Animate.css](https://github.com/daneden/animate.css) - Use the buttons Play and Stop animation at the top bar for preview.
 
